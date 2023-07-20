@@ -1,0 +1,15 @@
+---
+version: "3.8"
+services:
+  web:
+    build: .
+    container_name: nodejs-container
+    ports:
+      - "3000:3000"
+    restart: on-failure
+    volumes:
+      - data:/home/node/app
+
+volumes:
+  data:
+    external: true
